@@ -88,4 +88,19 @@ nextElement.addEventListener('click', function(){
 
 prevElement.addEventListener('click', function(){
 	console.log('go prev');
+
+
+	const lastIndex = slideElements.length - 1;
+	const firstIndex = 0;
+	const currentSlide = slideElements[currentSlideIndex];
+	currentSlide.classList.remove('active');
+
+	if(currentSlideIndex > firstIndex)	{
+		currentSlideIndex--;
+	}else{
+	currentSlideIndex = lastIndex;
+	}
+
+	const previousSlide = slideElements[currentSlideIndex];
+	previousSlide.classList.add('active');
 })
